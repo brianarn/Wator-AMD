@@ -1,5 +1,5 @@
 // main.js
-// Last modified: 2011-05-11 22:02:53
+// Last modified: 2011-05-12 21:21:53
 //
 // Playing around with AMD and the CommonJS package format and Require.js
 
@@ -18,4 +18,7 @@ require(['watorEngine'], function(wE){
 	require.ready(function(){
 		console.log('require.ready');
 	});
+
+	// Expose it
+	window.world = world;
 });

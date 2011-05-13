@@ -1,7 +1,7 @@
 // watorEngine fish
-// Last modified: 2011-05-11 22:00:21
+// Last modified: 2011-05-12 21:23:35
 
-define(['./creature'], function(creature){
+define(['./creature'], function(Creature){
 	console.log('watorEngine fish defined');
 
 	function fish() {
@@ -9,7 +9,7 @@ define(['./creature'], function(creature){
 		this.type = 'fish';
 	};
 
-	fish.prototype = creature;
+	fish.prototype = new Creature();
 
 	return fish;
 });
