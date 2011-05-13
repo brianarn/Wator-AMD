@@ -1,20 +1,20 @@
 // watorEngine creature
-// Last modified: 2011-05-12 21:51:36
+// Last modified: 2011-05-12 22:10:26
 
 define(function(){
 	console.log('watorEngine creature defined');
+
+	var id = 0;
 
 	// A stub base class of sorts
 	function creature(opts) {
 		console.log('Creating watorEngine creature');
 
-		// Sanity check
-		if (!opts.world) {
-			throw new Error('watorEngine creature: Invalid world specified');
-		}
-
 		// Set properties
-		this.world = opts.world;
+		if (opts && opts.world) { this.world = opts.world; }
+		// Set up an ID and increment after,
+		// if we've received options
+		if (opts) { this.id = id++; }
 	}
 
 	creature.prototype = {
@@ -38,6 +38,7 @@ define(function(){
 
 		log: function(){
 			console.log('Creature type:',this.type);
+			console.log('ID:',this.id);
 			console.log('Age:',this.age);
 			console.log('Ticks since last breed:', this.sinceLastBreed);
 		}
