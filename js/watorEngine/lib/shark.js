@@ -1,11 +1,16 @@
 // watorEngine shark
-// Last modified: 2011-05-12 21:21:03
+// Last modified: 2011-05-12 21:47:57
 
 define(['./creature'], function(Creature){
 	console.log('watorEngine shark defined');
 
 	function shark() {
-		console.log('new shark created');
+		console.log('Creting watorEngine shark');
+
+		// Apply our parent's constructor
+		Creature.apply(this, arguments);
+
+		// Modifications for this instance
 		this.type = 'shark';
 	};
 

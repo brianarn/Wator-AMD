@@ -1,17 +1,28 @@
 // watorEngine creature
-// Last modified: 2011-05-12 21:21:08
+// Last modified: 2011-05-12 21:51:36
 
 define(function(){
 	console.log('watorEngine creature defined');
 
 	// A stub base class of sorts
-	function creature() {}
+	function creature(opts) {
+		console.log('Creating watorEngine creature');
+
+		// Sanity check
+		if (!opts.world) {
+			throw new Error('watorEngine creature: Invalid world specified');
+		}
+
+		// Set properties
+		this.world = opts.world;
+	}
 
 	creature.prototype = {
 		// Properties
 		age: 0,
 		type: 'creature',
 		sinceLastBreed: 0,
+		world: null,
 
 		// Methods
 		tick: function(){

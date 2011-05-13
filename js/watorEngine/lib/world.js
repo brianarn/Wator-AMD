@@ -1,5 +1,5 @@
 // watorEngine world
-// Last modified: 2011-05-11 22:00:43
+// Last modified: 2011-05-12 21:52:03
 
 define(['./fish', './shark'], function(Fish, Shark){
 	console.log('watorEngine world defined');
@@ -7,8 +7,12 @@ define(['./fish', './shark'], function(Fish, Shark){
 	function world() {
 		console.log('new world created');
 
-		this.fish = new Fish();
-		this.shark = new Shark();
+		this.fish = new Fish({
+			world: this
+		});
+		this.shark = new Shark({
+			world: this
+		});
 	};
 
 	return world;
